@@ -16,8 +16,5 @@ jobs:
     - name: Install dependencies
       run: pip install scikit-learn pandas
       
-    - name: Set status to healthy
-      run: echo "healthy" > status.txt
-      
     - name: Run ML Pipeline
       run: python pipeline.py
