@@ -25,9 +25,8 @@ def run_ml_pipeline():
             
         if status == "corrupt":
             logging.warning("Data anomaly detected during ingestion!")
-            X = X[:10] # drastically reduce data to ruin accuracy
-            y = y[:10]
-
+            # Introduce massive data corruption so the model learns nothing
+            X = [[0, 0, 0, 0]] * len(X)
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
         # 2. Model Training
